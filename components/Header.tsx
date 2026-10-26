@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Header() {
     return (
         <View style={styles.headerContainer}>
-            <View>
+            <View style={styles.topRow}>
                 <View style={styles.brandGroup}>
                     <View style={styles.logoBadge}>
                         <Ionicons name="film" size={22} color="#ff3366"></Ionicons>
@@ -15,7 +15,13 @@ export default function Header() {
                         <Text style={styles.brandTitle}>
                             Cine<Text style={styles.brandHighligt}>App</Text>
                         </Text>
+                        <Text style={styles.brandSubtitle}>Catalogo & Streming</Text>
                     </View>
+                </View>
+
+                <View style={styles.userBadge}>
+                    <Ionicons name="sparkles" size={16} color="#ffbb00"></Ionicons>
+                    <Text style={styles.userBadgeText}>Em Alta</Text>
                 </View>
             </View>
         </View>
@@ -27,6 +33,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingTop: 10,
         paddingBottom: 16
+    },
+
+    topRow: {
+        flexDirection:"row",
+        justifyContent: "space-between",
+        alignItems: "center"
     },
 
     brandGroup: {
@@ -53,7 +65,30 @@ const styles = StyleSheet.create({
         letterSpacing: 0.5
     },
 
+    brandSubtitle: {
+        fontSize: 12,
+        fontWeight: "500",
+        color: "#94a3d8"
+    }, 
+
     brandHighligt: {
         color: "#ff3366"
-    }
+    },
+
+    userBadge: {
+        flexDirection: "row",
+        gap: 6,
+        alignItems: "center",
+        backgroundColor: "rgba(255, 184, 0, 0.12)",
+        paddingVertical: 6,
+        paddingHorizontal: 10,
+        borderRadius: 20,
+        borderColor: "rgba(255, 184, 0, 0.12)"
+    },
+
+    userBadgeText: {
+        fontSize: 12,
+        fontWeight:"700",
+        color: "#ffbb00",
+    },
 })
