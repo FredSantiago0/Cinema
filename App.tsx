@@ -8,9 +8,29 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar barStyle='light-content' />
 
-      <Header/>
-      <SearchBar/>
-      <CategoryButton/>
+      <Header />
+      <SearchBar />
+
+      <View style={styles.containerCategory}>
+        <CategoryButton title='Todos' selected={true}></CategoryButton>
+        <CategoryButton title='Ação' selected={false}></CategoryButton>
+        <CategoryButton title='Aventura' selected={false}></CategoryButton>
+        <CategoryButton title='Terror' selected={false}></CategoryButton>
+      </View>
+
+
+      <View style={styles.sectionMovie}>
+        <View style={styles.sectionTitleRow}>
+          <View style={styles.accentBar}>
+          </View>
+          <Text style={styles.sectionTitle}>Filmes em destaques</Text>
+        </View>
+
+        <View style={styles.countBadge}>
+          <Text style={styles.countTitle}>n Filmes</Text>
+        </View>
+      </View>
+
     </View>
   );
 }
@@ -21,4 +41,55 @@ const styles = StyleSheet.create({
     backgroundColor: '#0B0d14',
     paddingTop: 40
   },
+
+  containerCategory: {
+    flexDirection: "row",
+    gap: 10,
+    marginLeft: 20
+  },
+
+  sectionMovie: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 20,
+    marginBlock: 20
+  },
+
+  sectionTitleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    
+  },
+
+  accentBar: {
+    height: 18,
+    width: 4,
+    backgroundColor: "#ff3366",
+    borderRadius: 2
+  },
+
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: "800",
+    color: "#ffffff",
+    letterSpacing: 0.3
+  },
+
+  countBadge: {
+    backgroundColor: "#161a28",
+    borderWidth: 1,
+    borderColor: "#262d42",
+    borderRadius: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 4
+  },
+
+  countTitle: {
+    fontSize: 12,
+    fontWeight: "800",
+    color: "#94a3b8"
+  }
+
+
 });
